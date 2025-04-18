@@ -1,13 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
 body {
+  font-family: 'Orbitron', 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top left, #1f1c2c, #1a1a1a);
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  color: #fff;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* === MAIN CONTAINER === */
+.dice-container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 32px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* === HEADER === */
+h1 {
+  text-align: center;
+  font-size: 36px;
+  color: #00f2fe;
+  margin-bottom: 24px;
+  text-shadow: 0 0 8px #00f2fe, 0 0 16px #00f2fe;
+  animation: pulseHeader 2.5s infinite alternate ease-in-out;
+}
+
+@keyframes pulseHeader {
+  from {
+    text-shadow: 0 0 4px #00f2fe;
+  }
+  to {
+    text-shadow: 0 0 12px #00f2fe, 0 0 20px #00f2fe;
+  }
+}
+
+/* === PROFILE SECTION === */
+.profile-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 28px;
+  padding: 16px;
+  background: rgba(0, 242, 254, 0.06);
+  border: 1px solid rgba(0, 242, 254, 0.1);
+  border-radius: 12px;
+  box-shadow: inset 0 0 12px rgba(0, 242, 254, 0.15);
+}
+
+.profile-section h3 {
+  width: 100%;
+  margin: 0 0 12px;
+  color: #00f2fe;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+}
+
+/* === FORM SECTION === */
+.dice-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+}
+
+/* === INPUTS === */
+input {
+  flex: 1;
+  padding: 12px 16px;
+  font-size: 15px;
+  border: 1px solid #444;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.07);
+  color: #fff;
+  transition: 0.3s ease;
+}
+
+input::placeholder {
+  color: #aaa;
+}
+
+input:focus {
+  border-color: #00f2fe;
+  box-shadow: 0 0 10px #00f2fe;
+  outline: none;
+}
+
+/* === BUTTONS === */
+.dice-post-btn,
+.dice-apply-btn,
+.profile-section button {
+  background-color: #00f2fe;
+  color: #000;
+  border: none;
+  padding: 12px 18px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 242, 254, 0.2);
+}
+
+.dice-post-btn:hover,
+.dice-apply-btn:hover,
+.profile-section button:hover {
+  background-color: #00f2fe;
+  color: #000;
+  box-shadow: 0 0 12px #00f2fe, 0 0 24px #00f2fe;
+  transform: translateY(-2px);
+}
+
+/* === JOB LIST === */
+.dice-job-list {
+  list-style: none;
+  padding: 0;
+}
+
+.dice-job-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.dice-job-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+  transform: scale(1.01);
+}
+
+/* === JOB INFO === */
+.dice-job-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.dice-job-info strong {
+  font-size: 20px;
+  color: #00f2fe;
+}
+
+.dice-job-info em {
+  font-size: 16px;
+  color: #bbb;
+}
+
+.dice-tags {
+  margin-top: 8px;
+  display: flex;
+  gap: 10px;
+}
+
+.tag {
+  background-color: #00f2fe;
+  color: #000;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.tag-grey {
+  background-color: #ccc;
+  color: #111;
+}
+
+/* === REMOVE BUTTON === */
+.remove-btn {
+  background-color: #e74c3c;
+  color: #fff;
+  padding: 10px 14px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 8px;
+  margin-top: 8px;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s ease;
+}
+
+.remove-btn:hover {
+  background-color: #ff6b61;
+  box-shadow: 0 0 12px #ff6b61;
+  transform: scale(1.05);
+}
+
+/* === PAGINATION === */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.pagination button {
+  background-color: #00f2fe;
+  color: #000;
+  border: none;
+  padding: 10px 16px;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.pagination button:disabled {
+  background-color: #444;
+  color: #999;
+  cursor: not-allowed;
+}
+
+/* === COMPANY LOGO === */
+.company-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  object-fit: contain;
+  background: #eee;
+  border: 1px solid #888;
+}
+
+/* === MODAL === */
+.job-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.job-modal {
+  background: #fff;
+  color: #111;
+  padding: 24px;
+  width: 420px;
+  border-radius: 10px;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.modal-close {
+  margin-top: 16px;
+  background: #777;
 }
